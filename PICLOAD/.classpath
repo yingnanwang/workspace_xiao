@@ -20,5 +20,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Program Files/sqljdbc_4.1/enu/sqljdbc4.jar"/>
+	<classpathentry kind="lib" path="/TestUpload/WebContent/WEB-INF/lib/jspSmartUpload.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

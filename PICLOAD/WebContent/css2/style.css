@@ -61,7 +61,7 @@ body{
 }
 .search{
 	position:absolute;
-	top:2%;
+	top:50%;
 	right: 16%;
 	background:#1d95d1;
 }
@@ -79,6 +79,7 @@ body{
 	background: url(../images/search-icon.png)no-repeat 0px 0px;
 	border: none;
 	width: 12%;
+	height:120%;
 	position: absolute;
 	right: 7%;
 	top: 23%;
@@ -796,20 +797,7 @@ span.menu {
 .top-nav ul li a {
 	font-size: 16px;
 }
-.search input[type="text"] {
-	padding: .4em .3em;
-	width: 78%;
-	font-size: 13px;
-}
-.search input[type="submit"] {
-	right: 1%;
-	top: 14%;
-	width: 20%
-}
-.search {
-	right: 7%;
-	width: 37%
-}
+
 .banner-title h2 {
 	font-size: 1.4em;
 	font-weight: 500;

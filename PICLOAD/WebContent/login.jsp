@@ -50,22 +50,23 @@
 		<div class="container">
 			<div class="col-md-6 register">
 				<h3>Register New Account</h3>
-				<form action = "dealRegister.jsp" method="post">
-					<lable>Username :</lable>
+				<form action = "login_register/dealRegister.jsp" method="post">
+					<label>Username :</label>
 					<input name = "username"  type="text" required="true">
-					<lable>Email :</lable>
+					<label>Email :</label>
 					<input name = "email"  type="email" required="true">
-					<lable>Password :</lable>
+					<label>Password :</label>
 					<input name = "passwd"  type="password" required="true">
 					<input type="submit" value="Register">
 				</form>
 			</div>
-			<div class="col-md-6 login-info">
+			<!--  <div class="col-md-6 login-info">-->
+			<div class="col-md-6 register">
 				<h3>Login Form</h3>
-				<form action = "dealLogin.jsp" method="post">
-					<lable>Username :</lable>
-					<input name = "username"  type="text" required="true">
-					<lable>Password :</lable>
+				<form action = "login_register/dealLogin.jsp" method="post">
+					<label>Username :</label>
+					<input name = "username"  type="text"  required= "true">
+					<label>Password :</label>
 					<input name = "passwd"  type="password" required="true">
 					<input type="submit" value="Login">
 				</form>
@@ -76,7 +77,7 @@
 	<!--footer-->
 	<div class="footer">
 		<div class="container">
-			<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+			<p>indelible image</p>
 		</div>
 	</div>
 	<!--//footer-->
