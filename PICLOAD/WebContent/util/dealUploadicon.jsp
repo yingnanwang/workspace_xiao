@@ -22,21 +22,17 @@
 	}
 	long time = System.currentTimeMillis();
 	String pic_id = Long.toString(time);
-	smart.getFiles().getFile(0).saveAs(addr+pic_id+"."+ext);
-	
-	//获取标题
-	String pic_title = smart.getRequest().getParameter("title");
-	if(pic_title == null){pic_title = " ";}
-	
+	smart.getFiles().getFile(0).saveAs(addr+"icon.jpg");
+
 	//System.out.println(pic_id + "  " + pic_title + " "+ uid + " "+path);
 	
 	//插入数据库
-	String path = "/PIC/images" + uid +"/"+pic_id+"."+ext;
-	String result = PictureDB.addPic(pic_id, pic_title, uid, 0, path);
+	String path = "/PIC/images" + uid +"/icon.jpg";
+	String result = UserDB.changeIconPath(uid,path);
 	
 	//跳转
 	if(result.equals("success"))response.sendRedirect("/PIC/personinfo/infoMe.jsp");
-	else response.sendRedirect("/PIC/util/uploadpic.jsp");
+	else response.sendRedirect("/PIC/util/uploadicon.jsp");
 %>
 </body>
 </html>

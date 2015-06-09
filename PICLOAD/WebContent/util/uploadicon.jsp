@@ -104,18 +104,18 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <form  action = "dealUploadpic.jsp" method = "post"  enctype = "multipart/form-data">
-            <div class="form-group">
+          <form  action = "dealUploadicon.jsp" method = "post"  enctype = "multipart/form-data">
+            <!--  <div class="form-group">
               <label for="exampleInputEmail1">上传图片名称</label>
               <input type="text" class="form-control" name="title" placeholder="输入图片名称" required=“true”>
             </div>
-           <!--   <div class="form-group">
+              <div class="form-group">
               <label for="exampleInputPassword1">添加评论</label>
               <input type="password" class="form-control" id="exampleInputPassword1" placeholder="给图片添加一个评论">
               <p class="help-block">评论小于140字</p>
             </div>-->
             <div class="form-group">
-              <label for="exampleInputFile">打开图片</label>
+              <label for="exampleInputFile">打开新头像地址</label>
               <input type="file"  name="pic">
             </div>
            

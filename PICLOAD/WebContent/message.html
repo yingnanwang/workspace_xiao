@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+	<title>Contact us</title>
+	<link href="css3/style.css" type="text/css" rel="stylesheet" media="all">
+	<link href="css3/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+	<!--web-font-->
+	<link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.useso.com/css?family=Oleo+Script:400' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.useso.com/css?family=Karma:400,300' rel='stylesheet' type='text/css'>
+	<!--//web-font-->
+	<!-- Custom Theme files -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Viatges Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+		Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<script src="http://ajax.useso.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<!-- //Custom Theme files -->
+	<!-- js -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/modernizr.custom.js"></script>
+	<!-- //js -->	
+	<!-- start-smoth-scrolling-->
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>	
+	<script type="text/javascript" src="js/modernizr.custom.53451.js"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+	<!--//end-smoth-scrolling-->
+</head>
+<body>
+	<!--header-->
+	<div class="header">
+		<div class="container">
+			<div class="header-logo">
+				<a href="index.html"><h1>Indelible Image</h1></a>
+			</div>
+			<div class="top-nav">
+				<span class="menu"> </span>
+				<ul class="nav1">
+					<li><a href="index.html" class="active">Home page</a></li>
+					
+					<li><a href="signin.html">Sign In</a></li>
+					<li><a href="signup.html">Sign Up</a></li>
+				</ul>
+				<!-- script-for-menu -->
+				 <script>
+				   $( "span.menu" ).click(function() {
+					 $( "ul.nav1" ).slideToggle( 300, function() {
+					 // Animation complete.
+					  });
+					 });
+				</script>
+				<!-- /script-for-menu -->
+			</div>
+			<div class="clearfix"> </div>
+		</div>	
+	</div>
+	<!--//header-->
+	<!--contact-form-->
+	<div class="contact-form">
+		<div class="container">	
+			<div class="col-md-7 message">
+				<h3>Message To Us</h3>
+				<p>send an email.All fields with an * are required</p>
+				<form>
+					<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+					<input type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+					<input type="text" value="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" required="">
+					<textarea type="text" value="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+					<input type="submit" value="Send Email">
+				</form>
+			</div>
+			<div class="col-md-5 address">
+				<div class="address-info">
+					<h3>Address</h3>
+					<p>Nanjing University Xianlin campus,</p>
+					<p>Nanjing Jiangsu.</p>
+					<p>Postcode: 210046 </p>
+					<p>Telephone: +86 158 8888 8888</p>
+					<p>E-mail:<a href="mailto:example@email.com">mail@example.com</a>
+				</div>
+				<div class="address-info bottom">
+					<h3>地址</h3>
+					<p>江苏省南京市栖霞区</p>
+					<p>南京大学仙林校区</p>
+					<p>邮编：210046</p>
+					<p>手机: +86 158 8888 8888</p>
+					<p>E-mail:<a href="mailto:example@email.com">mail@example.com</a>
+				</div>
+			</div>	
+			<div class="clearfix"> </div>
+			
+		</div>	
+	</div>
+	<!--//contact-form-->
+	<!--footer-->
+	<div class="footer">
+		<div class="container">
+			<p>Copyright &copy; 2015.Indelible Image All rights reserved.</p>
+		</div>
+	</div>
+	<!--//footer-->
+	<!--smooth-scrolling-of-move-up-->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+			};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });	
+		});
+	</script>
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<!--//smooth-scrolling-of-move-up-->	
+</body>
+</html>	

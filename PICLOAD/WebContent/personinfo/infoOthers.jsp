@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=GBK" 
-import = "java.sql.*,javax.naming.*,LoginRelative.*"
+import = "java.sql.*,javax.naming.*,database.*"
 %>			   <!-- 设置网页的编码为GBK -->
 <%@ taglib prefix="f" uri="http://java.sun.com/jsf/core" %><!-- 引入JSF核心标记库 -->
 <%@ taglib prefix="h" uri="http://java.sun.com/jsf/html" %><!-- 引入JSF关于HTML的标记库-->
@@ -12,61 +12,71 @@ import = "java.sql.*,javax.naming.*,LoginRelative.*"
 </head>
 <body>
 	<% 
-		String myuid=(String)session.getAttribute("username");
+		//String myuid=(String)session.getAttribute("username");
 		String uid = request.getParameter("username");
-		if(!LoginDB.isRegistered(uid)){
+		if(!LoginDB.uidDuplication(uid).equals("fail")){
 			response.sendRedirect("../exception/NosuchPerson.jsp");
 		}
-		//String[] images = {};
-		String[] images = {"../images/1.jpg","../images/idImage/kangaroo.jpg","../images/idImage/xi.gif"};		
-		String[] nums = {"200","190","30"} ; 
-		String[] titles = {"2012.2","2012.3","2012.4"};
+		String iconpath = UserDB.getIconPath(uid);
+		String[] pic_ids = PictureDB.getID(uid);
+		String[] titles = PictureDB.getTitle(uid);
+		String[] paths = PictureDB.getPath(uid);
+		int[] favs = PictureDB.getFav(uid);
 	%>
     <header>
         <div class="header-container">
             <h1 id="logo">影南忘</h1>
-            <h2 id="search"><%=myuid%>打开的<%= uid%>个人主页</h2>
+            <h2 id="search"><%= uid%>个人主页</h2>
         </div>
     </header>
     <ul id="nav">
-        <li class="current">
-        	<% 
+       
+        	<%  
         		//String name = "xf";
         		//session.setAttribute("username",name);
         		//session.setAttribute("",);
         	%>
+          <li>
+        	<a name = "button"  href="../util/sendmsg.jsp?uid=<%= uid%>">
+        	私信
+        	</a>
         </li>
     </ul>
     <div id="main-container">
 
         <div id="left-content">
-        	    	 <% 
-                for(int i=0;i<images.length;i++) {
+       	 <% 
+       	 		if(paths!=null){
+                for(int i=0;i < paths.length;i++) {
          %>
             <div class="content-container">
             	<div class="content-head">
-            	<% out.println(titles[0]);%>
+            	    <img src=<%= iconpath%> class="portrait">
+                    <span class="name"><%=titles[i] %></span>
             	</div>
                 <div class="content-body">
                     <div class="img-wrap">
                         <div class="img-roll">
-                        <% out.println("<img src=\""+images[0]+"\" class = \"imgs\">"); %>
+                        <% out.println("<img src=\""+paths[i]+"\" class = \"imgs\">"); %>
                         </div>
-                        <i class="fa fa-chevron-left left fa-2x"></i>
-                        <i class="fa fa-chevron-right right fa-2x"></i>
+                        <!--  <i class="fa fa-chevron-left left fa-2x"></i>
+                        <i class="fa fa-chevron-right right fa-2x"></i>-->
                     </div>
                     <div class="icons">
-                        <i class="fa fa-thumbs-o-up fa-2x up"></i>
+                        <i class="fa fa-thumbs-o-up fa-2x up" id = <%=pic_ids[i] %> ></i>
                         <span class="up-amount amount">
-                        200
+                        <%= Integer.toString(favs[i])%>
                         </span>
                     </div>                   
                 </div>
             </div>
-               <%} %>
+               <%} }  else {%>
+            	<div class="content-body">
+            	</div>
+       	 	 <% } %>
         </div>
         <div id="psn-info">
-            <img src="../images/ps-port.gif" id="ps-port">
+            <img src=<%= iconpath%> id="ps-port">
             <span id="ps-name"><%=uid%></span>
             <div class="spe-info">
                 <span class="cl">喜欢</span>
@@ -86,8 +96,7 @@ import = "java.sql.*,javax.naming.*,LoginRelative.*"
             </div>
         </div>
         <div><br></div>
-     
-    </div>
+   </div>
 
     <footer>
          影南忘
