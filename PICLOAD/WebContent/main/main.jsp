@@ -78,9 +78,6 @@
         	<% 
         		if(paths != null){
                 	for(int i=0;i<paths.length;i++) {
-                		//System.out.println(paths[i]);
-                		//System.out.println(titles[i]);
-                		//System.out.println(favs[i]);
         	 %>
             <div class="content-container">
             	<div class="content-head">
